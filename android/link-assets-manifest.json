@@ -1,0 +1,49 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "app/theme/fonts/GeneralSans-Bold.ttf",
+      "sha1": "457aa09f6ec9b8d60d4ccf0d5a148ff8669f2e47"
+    },
+    {
+      "path": "app/theme/fonts/GeneralSans-BoldItalic.ttf",
+      "sha1": "8c027c7da44f17c82d15463bb12d716ff7b55679"
+    },
+    {
+      "path": "app/theme/fonts/GeneralSans-Extralight.ttf",
+      "sha1": "1310f0d838e9490d364f05cee5687a7c1c8fe733"
+    },
+    {
+      "path": "app/theme/fonts/GeneralSans-ExtralightItalic.ttf",
+      "sha1": "572895e8ab52318f60071621f8cd02232f1273ac"
+    },
+    {
+      "path": "app/theme/fonts/GeneralSans-Italic.ttf",
+      "sha1": "ef220e5cbb8f876a8a80dacf53575263ef178c8f"
+    },
+    {
+      "path": "app/theme/fonts/GeneralSans-Light.ttf",
+      "sha1": "188d2f68d4559fecdb35a2511fe465aa67c2bf7f"
+    },
+    {
+      "path": "app/theme/fonts/GeneralSans-Medium.ttf",
+      "sha1": "0fa164f0a10679cf336cfff3e18136cad11d09a1"
+    },
+    {
+      "path": "app/theme/fonts/GeneralSans-MediumItalic.ttf",
+      "sha1": "c7c602a1a36a792119e552ae5850553cf8d898a4"
+    },
+    {
+      "path": "app/theme/fonts/GeneralSans-Regular.ttf",
+      "sha1": "403ecba263fa1005569d5509aee13f27e41885d0"
+    },
+    {
+      "path": "app/theme/fonts/GeneralSans-Semibold.ttf",
+      "sha1": "aa79c8c66ee9f3c582facf06cdee20e5f6236406"
+    },
+    {
+      "path": "app/theme/fonts/GeneralSans-SemiboldItalic.ttf",
+      "sha1": "a40cc2ac5d1dc7e35f7fe25285e2d4e7df8a57e8"
+    }
+  ]
+}

@@ -4,6 +4,7 @@ import {
   createStackNavigator,
 } from '@react-navigation/stack';
 import React, {useEffect, useState} from 'react';
+import { DemoScreen } from '../../screens';
 
 const Stack = createStackNavigator();
 

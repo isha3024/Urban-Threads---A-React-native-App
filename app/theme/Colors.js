@@ -10,5 +10,6 @@ export const color = {
   inputBorderBg: '#999999',
   bodyGray: '#808080',
   iconFill: '#B3B3B3',
-  ratingsFill: '#FFA928'
+  ratingsFill: '#FFA928',
+  transparent: 'rgba(0, 0, 0, 0)'
 };

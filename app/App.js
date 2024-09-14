@@ -1,15 +1,14 @@
 import React from 'react';
 import { SafeAreaView, StyleSheet, Text, View} from 'react-native';
 import { color, fonts, size } from './theme';
+import { MainStackNavigation } from './navigation';
 
 const App = () => {
   
 
   return (
     <SafeAreaView style={styles.container}>
-      <View>
-        <Text>Hello World!!</Text>
-      </View>
+      <MainStackNavigation />
     </SafeAreaView>
   );
 };

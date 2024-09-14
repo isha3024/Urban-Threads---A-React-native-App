@@ -3,7 +3,7 @@ import Svg, { Path } from 'react-native-svg';
 import {size} from '../../Size';
 import { color } from '../../Colors';
 
-export const Heart = () => {
+export const Heart = (props) => {
   return (
     <Svg
       width={props.width ?? size.moderateScale(24)}

@@ -1,6 +1,8 @@
 /* eslint-disable react/react-in-jsx-scope */
 // INFO: all svg icons will go below
 import React from 'react';
+
+import { Logo } from './image/svgIcons/IcLogo';
 import { Heart } from './image/svgIcons/IcHeart';
 import { HeartFilled } from './image/svgIcons/IcHeartFilled';
 import { ArrowRight } from './image/svgIcons/IcArrowRight';
@@ -16,6 +18,7 @@ import { Account } from './image/svgIcons/IcAccount';
 import { Cart } from './image/svgIcons/IcCart';
 import { Search } from './image/svgIcons/IcSearch';
 
+export const IcLogo = props => <Logo {...props} />;
 export const IcHeart = props => <Heart {...props} />;
 export const IcHeartFilled = props => <HeartFilled {...props} />;
 export const IcArrowRight = props => <ArrowRight {...props} />;

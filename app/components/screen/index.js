@@ -4,11 +4,13 @@ import {
   SafeAreaView,
   TouchableWithoutFeedback,
   Keyboard,
+  StatusBar,
 } from 'react-native';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 
 import {Loader} from '../loader';
 import * as styles from './styles';
+import { color } from '../../theme';
 
 export const Screen = props => {
   const {
@@ -27,11 +29,11 @@ export const Screen = props => {
   if (withScroll) {
     return (
       <SafeAreaView style={styles.mainContainer(bgColor)}>
-        {/* <StatusBar
+        <StatusBar
           translucent
           backgroundColor={bgColor ?? color.white}
-          barStyle={bgColor ? 'dark-content' : 'dark-content'}
-        /> */}
+          barStyle={bgColor ? 'light-content' : 'dark-content'}
+        />
         {loading && <Loader />}
         <KeyboardAwareScrollView
           keyboardShouldPersistTaps={keyboardShouldPersistTaps || 'handled'}
@@ -53,11 +55,11 @@ export const Screen = props => {
     return (
       <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
         <SafeAreaView style={styles.container(bgColor)}>
-          {/* <StatusBar
+          <StatusBar
             translucent
             backgroundColor={bgColor ?? color.white}
-            barStyle={bgColor ? 'dark-content' : 'dark-content'}
-          /> */}
+            barStyle={bgColor ? 'light-content' : 'dark-content'}
+          />
           {loading && <Loader />}
 
           <View style={styles.container(style)}>{children}</View>

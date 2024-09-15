@@ -1,10 +1,11 @@
-import {NavigationContainer} from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
 import {
   CardStyleInterpolators,
   createStackNavigator,
 } from '@react-navigation/stack';
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import { DemoScreen } from '../../screens';
+import { BottomStackNavigation } from '../bottomStackNavigation';
 
 const Stack = createStackNavigator();
 
@@ -19,12 +20,19 @@ export const MainStackNavigation = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen
+        {/* <Stack.Screen
           name="demoScreen"
           component={DemoScreen}
           options={{
             headerShown: false,
             cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
+          }}
+        /> */}
+        <Stack.Screen
+          name="bottomStackNavigation"
+          component={BottomStackNavigation}
+          options={{
+            headerShown: false,
           }}
         />
       </Stack.Navigator>

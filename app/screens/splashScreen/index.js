@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react'
-import { View, Text, ImageBackground, Image, Animated } from 'react-native'
+import { View, Image, Animated } from 'react-native'
 
 import * as styles from './styles'
 import { Screen } from '../../components'
@@ -13,13 +13,13 @@ export const SplashScreen = () => {
   useEffect(() => {
     Animated.parallel([
       Animated.spring(logoScaleAnimation, {
-        toValue: 1,
-        friction: 3,
+        toValue: 1.5,
+        delay: 100,
         useNativeDriver: true,
       }),
       Animated.timing(logoOpacityAnimation, {
         toValue: 1,
-        duration: 1000,
+        duration: 2000,
         useNativeDriver: true,
       })
     ]).start()

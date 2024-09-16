@@ -6,8 +6,8 @@ import { color } from '../../Colors';
 export const Logo = (props) => {
   return (
     <Svg
-      width={props.width ?? size.moderateScale(134)}
-      height={props.height ?? size.moderateScale(133)}
+      width={props.width ?? size.moderateScale(100)}
+      height={props.height ?? size.moderateScale(100)}
       viewBox="0 0 134 133"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

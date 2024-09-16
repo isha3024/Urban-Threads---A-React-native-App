@@ -6,32 +6,32 @@ import {
   Keyboard,
   StatusBar,
 } from 'react-native';
-import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
-import {Loader} from '../loader';
-import * as styles from './styles';
+import { Loader } from '../loader';
 import { color } from '../../theme';
+import * as styles from './styles';
 
-export const Screen = props => {
-  const {
-    children,
-    withScroll,
-    style,
-    bgColor,
-    scrollStyle,
-    scrollRef,
-    onScrolling,
-    keyboardShouldPersistTaps,
-    extraScrollHeight,
-    loading,
-  } = props;
+export const Screen = ({
+  children,
+  withScroll,
+  style,
+  bgColor,
+  scrollStyle,
+  scrollRef,
+  onScrolling,
+  keyboardShouldPersistTaps,
+  extraScrollHeight,
+  loading,
+  translucent
+}) => {
 
   if (withScroll) {
     return (
       <SafeAreaView style={styles.mainContainer(bgColor)}>
         <StatusBar
-          translucent
-          backgroundColor={bgColor ?? color.white}
+          translucent={translucent}
+          backgroundColor={bgColor ?? color.primary}
           barStyle={bgColor ? 'light-content' : 'dark-content'}
         />
         {loading && <Loader />}
@@ -56,8 +56,8 @@ export const Screen = props => {
       <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
         <SafeAreaView style={styles.container(bgColor)}>
           <StatusBar
-            translucent
-            backgroundColor={bgColor ?? color.white}
+            translucent={translucent}
+            backgroundColor={bgColor ?? color.primary}
             barStyle={bgColor ? 'light-content' : 'dark-content'}
           />
           {loading && <Loader />}

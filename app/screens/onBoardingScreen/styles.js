@@ -7,7 +7,6 @@ export const mainScreenView = () => ({
 
 export const viewContainer = () => ({
   flex: 1,
-  backgroundColor: color.primary,
   paddingTop: size.moderateScale(50)
 })
 

@@ -1,12 +1,14 @@
 import React, { useEffect, useRef } from 'react'
 import { View, Image, Animated } from 'react-native'
+import { useNavigation } from '@react-navigation/native'
 
-import * as styles from './styles'
-import { Button, Screen } from '../../components'
 import { color, IcArrowRight, images } from '../../theme'
+import { Button, Screen } from '../../components'
+import * as styles from './styles'
 
 export const OnBoardingScreen = () => {
 
+  const navigation = useNavigation()
   const textOpacity = useRef(new Animated.Value(0)).current;
   const imageScale = useRef(new Animated.Value(0)).current;
 
@@ -35,6 +37,7 @@ export const OnBoardingScreen = () => {
       </View>
       <View style={styles.buttonContainer()}>
         <Button 
+          onPress={() => navigation.navigate('registerScreen')}
           activeOpacity={0.8}
           title='Get Started'
           iconRight

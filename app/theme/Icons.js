@@ -17,6 +17,8 @@ import { Home } from './image/svgIcons/IcHome';
 import { Account } from './image/svgIcons/IcAccount';
 import { Cart } from './image/svgIcons/IcCart';
 import { Search } from './image/svgIcons/IcSearch';
+import { Google } from './image/svgIcons/IcGoogle';
+import { Facebook } from './image/svgIcons/IcFacebook';
 
 export const IcLogo = props => <Logo {...props} />;
 export const IcHeart = props => <Heart {...props} />;
@@ -33,3 +35,5 @@ export const IcHome = props => <Home {...props} />;
 export const IcSearch = props => <Search {...props} />;
 export const IcCart = props => <Cart {...props} />;
 export const IcAccount = props => <Account {...props} />;
+export const IcGoogle = props => <Google {...props} />;
+export const IcFacebook = props => <Facebook {...props} />;

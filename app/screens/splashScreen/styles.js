@@ -4,11 +4,12 @@ export const mainView = () => ({
   flex: 1,
   backgroundColor: color.secondary,
   alignItems: 'center',
-  justifyContent: 'center'
+  justifyContent: 'center',
+  width: size.deviceWidth,
+  height: size.deviceHeight,
 })
 
 export const bgImage = () => ({
-  flex: 1,
   position: 'absolute',
   width: size.deviceWidth,
   height: size.deviceHeight - 100,

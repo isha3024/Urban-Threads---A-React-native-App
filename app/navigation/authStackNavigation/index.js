@@ -2,6 +2,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import React, { useEffect, useState } from 'react';
 
 import { LoginScreen, OnBoardingScreen, RegisterScreen, ResetPasswordScreen, SplashScreen, VerificationCodeScreen } from '../../screens';
+import { ForgetPasswordScreen } from '../../screens/forgetPasswordScreen';
 
 const AuthStack = createStackNavigator();
 
@@ -21,6 +22,10 @@ export const AuthStackNavigation = () => {
       <AuthStack.Screen
         name='loginScreen'
         component={LoginScreen}
+      />
+      <AuthStack.Screen
+        name='forgetPasswordScreen'
+        component={ForgetPasswordScreen}
       />
       <AuthStack.Screen
         name='verificationCodeScreen'

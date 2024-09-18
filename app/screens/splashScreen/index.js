@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react'
-import { View, Image, Animated } from 'react-native'
+import { View, Image, Animated, StatusBar } from 'react-native'
 
 import * as styles from './styles'
 import { Screen } from '../../components'
@@ -26,8 +26,8 @@ export const SplashScreen = () => {
   },[])
 
   return (
-    <Screen bgColor={color.secondary} translucent={true}>
       <View style={styles.mainView()}>
+        <StatusBar backgroundColor={color.secondary} barStyle='light-content' />
         <Image source={images.splashBgImage} style={styles.bgImage()} />
         <Animated.View style={{
           transform: [{ scale: logoScaleAnimation }],
@@ -36,6 +36,5 @@ export const SplashScreen = () => {
           <IcLogo />
         </Animated.View>
       </View>
-    </Screen>
   )
 }

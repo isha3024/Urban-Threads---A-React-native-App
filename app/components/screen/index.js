@@ -26,9 +26,11 @@ export const Screen = ({
   translucent
 }) => {
 
+  const statusbarHeight = StatusBar.currentHeight;
+
   if (withScroll) {
     return (
-      <SafeAreaView style={styles.mainContainer(bgColor)}>
+      <SafeAreaView style={styles.mainContainer(bgColor, statusbarHeight)}>
         <StatusBar
           translucent={translucent}
           backgroundColor={bgColor ?? color.primary}
@@ -54,7 +56,7 @@ export const Screen = ({
   } else {
     return (
       <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
-        <SafeAreaView style={styles.container(bgColor)}>
+        <SafeAreaView style={styles.container(bgColor, statusbarHeight)}>
           <StatusBar
             translucent={translucent}
             backgroundColor={bgColor ?? color.primary}
@@ -62,7 +64,7 @@ export const Screen = ({
           />
           {loading && <Loader />}
 
-          <View style={styles.container(style)}>{children}</View>
+          <View style={styles.withoutScrollView(style)}>{children}</View>
         </SafeAreaView>
       </TouchableWithoutFeedback>
     );

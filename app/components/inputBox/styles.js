@@ -16,7 +16,7 @@ export const textInputWrapper = (error, success) => ({
   borderWidth: size.moderateScale(1),
   borderColor: error ? color.error : success ? color.success : color.inputBorder,
   borderRadius: size.moderateScale(10),
-  paddingHorizontal: size.moderateScale(20),
+  paddingHorizontal: size.moderateScale(15),
   marginTop: size.moderateScale(4)
 })
 
@@ -29,7 +29,7 @@ export const textInput = () => ({
 
 export const renderIconStyle = () => ({
   position: 'absolute',
-  right: size.moderateScale(20),
+  right: size.moderateScale(15),
   height: '100%',
   width: size.moderateScale(30),
   justifyContent: 'center',

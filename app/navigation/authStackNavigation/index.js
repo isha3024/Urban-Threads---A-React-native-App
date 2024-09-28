@@ -1,7 +1,7 @@
-import { createStackNavigator } from '@react-navigation/stack';
+import { CardStyleInterpolators, createStackNavigator } from '@react-navigation/stack';
 import React, { useEffect, useState } from 'react';
 
-import { LoginScreen, OnBoardingScreen, RegisterScreen, ResetPasswordScreen, SplashScreen, VerificationCodeScreen } from '../../screens';
+import { LoginScreen, OnBoardingScreen, RegisterScreen, ResetPasswordScreen, VerificationCodeScreen } from '../../screens';
 import { ForgetPasswordScreen } from '../../screens/forgetPasswordScreen';
 
 const AuthStack = createStackNavigator();
@@ -9,7 +9,8 @@ const AuthStack = createStackNavigator();
 export const AuthStackNavigation = () => {
   return (
     <AuthStack.Navigator screenOptions={{
-      headerShown: false
+      headerShown: false,
+      cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS
     }}>
       <AuthStack.Screen
         name='onBoardingScreen'

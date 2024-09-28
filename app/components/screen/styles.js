@@ -1,19 +1,24 @@
 import { color } from '../../theme';
-export const full = () => ({
-  flexGrow: 1,
-  backgroundColor: color.bodyGray
-});
-export const mainContainer = (secondary, height) => ({
+
+export const mainContainer = (bgColor) => ({
   flex: 1,
-  backgroundColor: secondary ? secondary : color.white,
-  marginTop: height
+  backgroundColor: bgColor ?? color.white,
 });
 
-export const container = (secondary, height) => ({
+export const full = () => ({
+  flex: 1,
+  backgroundColor: color.primary
+});
+
+export const container = (bgColor, height) => ({
   flex: 1,
   marginTop: height,
-  backgroundColor: secondary ? secondary : color.white,
+  backgroundColor: bgColor ?? color.white,
   overflow: 'hidden',
+})
+
+export const scrollContainer = () => ({
+  flexGrow: 1
 })
 
 export const withoutScrollView = (style) => [

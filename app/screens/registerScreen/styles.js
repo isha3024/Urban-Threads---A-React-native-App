@@ -3,7 +3,7 @@ import { color, fonts, fontSize, size } from "../../theme";
 export const mainScreenView = () => ({
   flex: 1,
   backgroundColor: color.primary,
-  paddingVertical: size.moderateScale(12),
+  marginVertical: size.moderateScale(12),
   paddingHorizontal: size.moderateScale(24),
 })
 
@@ -86,11 +86,8 @@ export const btnSocialAccountFb = () => ({
 })
 
 export const bottomLinkView = () => ({
-  position: 'absolute',
-  bottom: size.moderateScale(20),
-  width: size.deviceWidth,
-  left: 0,
   flexDirection: 'row',
   alignItems: 'center',
   justifyContent: 'center',
+  marginTop: 'auto',
 })

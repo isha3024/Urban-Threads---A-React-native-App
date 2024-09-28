@@ -7,6 +7,8 @@ import { color, IcCheckCircle, IcInputError } from '../../theme'
 export const InputBox = ({
   label,
   placeholder,
+  value,
+  onChangeText,
   icon,
   renderIcon,
   onIconPress,
@@ -16,9 +18,9 @@ export const InputBox = ({
   maxLength,
   autoCapitalize,
   error,
-  errorMessage,
   success
 }) => {
+
   return (
     <View style={styles.inputBoxWrapper()}>
       <Text style={styles.inputLabel()}>{label}</Text>
@@ -27,6 +29,8 @@ export const InputBox = ({
           style={styles.textInput()}
           placeholder={placeholder}
           placeholderTextColor={color.inputPlaceHolderTextColor}
+          value={value}
+          onChangeText={onChangeText}
           keyboardType={keyboardType}
           multiline={multiline}
           secureTextEntry={secureTextEntry}
@@ -42,7 +46,7 @@ export const InputBox = ({
           : null
         }
       </View>
-      {error && <Text style={styles.errorText()}>{`* ${errorMessage}`}</Text>}
+      {error && <Text style={styles.errorText()}>{`* ${error}`}</Text>}
     </View>
   )
 }

@@ -18,7 +18,7 @@ export const Button = ({
 }) => {
 
   return (
-    <TouchableOpacity style={[styles.buttonWrapper(disabled, btnOutline), customBtnStyles]} onPress={onPress} activeOpacity={activeOpacity} disabled={disabled}>
+    <TouchableOpacity style={[styles.buttonWrapper(disabled, btnOutline), customBtnStyles]} onPress={onPress} activeOpacity={activeOpacity ?? 0.7} disabled={disabled}>
       { iconLeft && renderLeftIcon() }
       <Text style={[styles.btnText(btnOutline), customBtnTextStyles]}>{title}</Text>
       { iconRight && renderRightIcon() }

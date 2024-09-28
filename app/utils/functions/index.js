@@ -10,19 +10,23 @@ export const NumberValidation = val => {
   let alphaNumericRegex = /^([0-9])*$/;
   return alphaNumericRegex.test(val);
 };
+
 export const EmailValidation = val => {
-  let characterRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  let characterRegex = /[A-Za-z0-9\._%+\-]+@[a-z0-9\.\-]+\.[A-Za-z]{2,}/;
   return characterRegex.test(val);
 };
+
 export const StringValidation = val => {
   let characterRegex = /^[a-zA-Z\s?.?]*$/;
   return characterRegex.test(val);
 };
+
 export const passwordValidation = val => {
   passwordPattern =
     /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*?&])([a-zA-Z0-9@$!%*?&]{8,})$/;
   return passwordPattern.test(val);
 };
+
 export const formatCreditCardNumber = input => {
   // Remove non-numeric characters
   const numericInput = input.replace(/(.{4})/g, '$1 ');
@@ -38,6 +42,7 @@ export const formatCreditCardNumber = input => {
 
   return formattedInput;
 };
+
 export const invertColor = color => {
   // Assuming color is in the format 'rgba(r, g, b, a)'
   const values = color.match(/\d+/g).map(Number);
@@ -101,6 +106,7 @@ export const compareExpiryDate = inputDate => {
     return false;
   }
 };
+
 export const validateCVV = cvv => {
   // Assuming CVV should be a 3 or 4-digit number
   if (cvv) {

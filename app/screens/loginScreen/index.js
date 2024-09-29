@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import { View, Text, TouchableOpacity } from 'react-native'
+import { View, Text, TouchableOpacity, ToastAndroid } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 
 import { Button, InputBox, Screen } from '../../components'
+import { EmailValidation } from '../../utils'
 import { IcEye, IcEyeOff, IcFacebook, IcGoogle } from '../../theme'
 import * as styles from './styles'
-import { EmailValidation } from '../../utils/functions'
 
 export const LoginScreen = () => {
 
@@ -43,6 +43,17 @@ export const LoginScreen = () => {
     return Object.keys(error).length === 0
   }
 
+  const handleFormSubmit = () => {
+    if(validateInputFields()) {
+      console.log('Form submitted successfully')
+    }
+    setInputFields({
+      email: '',
+      password: ''
+    })
+    ToastAndroid.show('User created successfully!!',ToastAndroid.SHORT)
+  }
+
   useEffect(() => {
     checkDisabledButton()
   },[inputFields])
@@ -61,7 +72,6 @@ export const LoginScreen = () => {
             label='Email'
             placeholder='Enter your email address'
             keyboardType='email-address'
-            autoCapitalize={false}
             error={error?.email}
             icon={error?.email}
             renderIcon={() => (<IcInputError />)}
@@ -72,14 +82,13 @@ export const LoginScreen = () => {
             onChangeText={(text) => setInputFieldsText('password', text)}
             placeholder='Enter your password'
             keyboardType='default'
-            autoCapitalize={true}
             icon={true}
             error={error?.password}
             renderIcon={() => togglePassword ? (<IcEye />) : (<IcEyeOff />)}
             onIconPress={() => setTogglePassword(prev => !prev)}
             secureTextEntry={togglePassword}
           />
-          <TouchableOpacity style={styles.textInRow()} onPress={() => navigation.navigate('forgetPasswordScreen')}>
+          <TouchableOpacity activeOpacity={0.6} style={styles.textInRow()} onPress={() => navigation.navigate('forgetPasswordScreen')}>
             <Text style={styles.textLight()}>Forget your password?</Text>
             <Text style={styles.linkText()}> Reset Password</Text>
           </TouchableOpacity>
@@ -87,7 +96,7 @@ export const LoginScreen = () => {
             title='Login'
             disabled={disabled}
             customBtnStyles={styles.buttonMain()}
-            onPress={!disabled && validateInputFields}
+            onPress={() => validateInputFields() && handleFormSubmit()}
           />
         </View>
         <View style={styles.bottomView()}>
@@ -111,7 +120,7 @@ export const LoginScreen = () => {
             customBtnStyles={styles.btnSocialAccountFb()}
           />
         </View>
-        <TouchableOpacity style={styles.bottomLinkView()} onPress={() => navigation.navigate('registerScreen')}>
+        <TouchableOpacity activeOpacity={0.6} style={styles.bottomLinkView()} onPress={() => navigation.navigate('registerScreen')}>
           <Text style={styles.textLight()}>Don't have an account?</Text>
           <Text style={styles.linkText()}> Join</Text>
         </TouchableOpacity>

@@ -5,6 +5,7 @@ import * as styles from './styles'
 import { color, IcCheckCircle, IcInputError } from '../../theme'
 
 export const InputBox = ({
+  inputStyle,
   label,
   placeholder,
   value,
@@ -22,8 +23,8 @@ export const InputBox = ({
 }) => {
 
   return (
-    <View style={styles.inputBoxWrapper()}>
-      <Text style={styles.inputLabel()}>{label}</Text>
+    <View style={[inputStyle, styles.inputBoxWrapper()]}>
+      {label && (<Text style={styles.inputLabel()}>{label}</Text>)}
       <View style={styles.textInputWrapper(error, success)}>
         <TextInput 
           style={styles.textInput()}
@@ -35,7 +36,7 @@ export const InputBox = ({
           multiline={multiline}
           secureTextEntry={secureTextEntry}
           maxLength={maxLength}
-          autoCapitalize={autoCapitalize}
+          autoCapitalize={autoCapitalize ?? 'none'}
         />
         {
           icon && error 

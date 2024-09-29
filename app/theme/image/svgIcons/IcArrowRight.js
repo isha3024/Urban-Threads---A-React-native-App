@@ -15,7 +15,7 @@ export const ArrowRight = (props) => {
     >
       <Path
         d="M5.5 12h14m0 0l-7-7m7 7l-7 7"
-        stroke={props.stroke ?? color.primary}
+        stroke={props.stroke ?? color.secondary}
         strokeWidth={2}
         strokeLinecap="round"
         strokeLinejoin="round"

@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import { View, Text, TouchableOpacity } from 'react-native'
+import { View, Text, TouchableOpacity, ToastAndroid } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 
 import { Button, InputBox, Screen } from '../../components'
+import { EmailValidation } from '../../utils'
 import { IcEye, IcEyeOff, IcFacebook, IcGoogle, IcInputError } from '../../theme'
 import * as styles from './styles'
-import { EmailValidation } from '../../utils/functions'
 
 export const RegisterScreen = () => {
 
@@ -49,9 +49,21 @@ export const RegisterScreen = () => {
     return Object.keys(error).length === 0
   }
 
+  const handleFormSubmit = () => {
+    if(validateInputFields()) {
+      console.log('Form submitted successfully');
+      // navigation.navigate
+    }
+    setInputFields({
+      fullName: '',
+      email: '',
+      password: ''
+    })
+    ToastAndroid.show('User created successfully!!',ToastAndroid.SHORT)
+  }
+
   useEffect(() => {
     checkDisabledButton()
-    console.log("Errors: ",error)
   },[inputFields])
  
   return (
@@ -79,7 +91,7 @@ export const RegisterScreen = () => {
           onChangeText={(text) => setInputFieldsText('email', text)}
           placeholder='Enter your email address'
           keyboardType='email-address'
-          autoCapitalize={false}
+          autoCapitalize='none'
           error={error?.email}
           icon={error?.email}
           renderIcon={() => (<IcInputError />)}
@@ -109,7 +121,7 @@ export const RegisterScreen = () => {
         <Button 
           title='Create an Account'
           disabled={disabled}
-          onPress={!disabled && validateInputFields}
+          onPress={() => validateInputFields() && handleFormSubmit()}
           customBtnStyles={styles.buttonMain()}
         />
       </View>
@@ -134,7 +146,7 @@ export const RegisterScreen = () => {
           customBtnStyles={styles.btnSocialAccountFb()}
         />
       </View>
-      <TouchableOpacity style={styles.bottomLinkView()} onPress={() => navigation.navigate('loginScreen')}>
+      <TouchableOpacity activeOpacity={0.6} style={styles.bottomLinkView()} onPress={() => navigation.navigate('loginScreen')}>
           <Text style={styles.textLight()}>Already have an account?</Text>
           <Text style={styles.linkText()}> Log In</Text>
       </TouchableOpacity>

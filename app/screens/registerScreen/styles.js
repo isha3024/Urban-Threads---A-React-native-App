@@ -25,7 +25,8 @@ export const textLight = () => ({
 
 export const textInRow = () => ({
   flexDirection: 'row',
-  flexWrap: 'wrap'
+  flexWrap: 'wrap',
+  marginTop: size.moderateScale(10)
 })
 
 export const bodyTextDark = () => ({

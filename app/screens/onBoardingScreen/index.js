@@ -41,7 +41,7 @@ export const OnBoardingScreen = () => {
           activeOpacity={0.8}
           title='Get Started'
           iconRight
-          renderRightIcon={() => (<IcArrowRight fill={color.primary} />)}
+          renderRightIcon={() => (<IcArrowRight stroke={color.primary} />)}
         />
       </View>
     </Screen>

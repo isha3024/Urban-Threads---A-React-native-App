@@ -24,7 +24,6 @@ export const textInput = () => ({
   fontSize: fontSize.littleMedium,
   fontFamily: fonts.generalSansRegular,
   color: color.secondary,
-  textTransform: 'capitalize',
 })
 
 export const renderIconStyle = () => ({

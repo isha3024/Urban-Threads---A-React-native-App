@@ -11,10 +11,10 @@ export const NumberValidation = val => {
   return alphaNumericRegex.test(val);
 };
 
-export const EmailValidation = val => {
-  let characterRegex = /[A-Za-z0-9\._%+\-]+@[a-z0-9\.\-]+\.[A-Za-z]{2,}/;
-  return characterRegex.test(val);
-};
+export const EmailValidation = (email) => {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+}
 
 export const StringValidation = val => {
   let characterRegex = /^[a-zA-Z\s?.?]*$/;

@@ -51,7 +51,8 @@ export const LoginScreen = () => {
       email: '',
       password: ''
     })
-    ToastAndroid.show('User created successfully!!',ToastAndroid.SHORT)
+    ToastAndroid.show('User created successfully!!',ToastAndroid.SHORT);
+    navigation.navigate('bottomStackNavigation')
   }
 
   useEffect(() => {

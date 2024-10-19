@@ -4,7 +4,7 @@ import {
   createStackNavigator,
 } from '@react-navigation/stack';
 import React, { useEffect, useState } from 'react';
-import { DemoScreen, SplashScreen } from '../../screens';
+import { SplashScreen } from '../../screens';
 import { BottomStackNavigation } from '../bottomStackNavigation';
 import { AuthStackNavigation } from '../authStackNavigation';
 
@@ -22,14 +22,6 @@ export const MainStackNavigation = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        {/* <Stack.Screen
-          name="demoScreen"
-          component={DemoScreen}
-          options={{
-            headerShown: false,
-            cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
-          }}
-        /> */}
         {
           showSplashScreen 
           ? ( <Stack.Screen
@@ -42,20 +34,20 @@ export const MainStackNavigation = () => {
             ) 
           : null
         }
-        <Stack.Screen 
+        {/* <Stack.Screen 
           name='authStackNavigation'
           component={AuthStackNavigation}
           options={{
             headerShown: false,
           }}
-        />
-        {/* <Stack.Screen
+        /> */}
+        <Stack.Screen
           name="bottomStackNavigation"
           component={BottomStackNavigation}
           options={{
             headerShown: false,
           }}
-        /> */}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -1,5 +1,5 @@
-import { CardStyleInterpolators, createStackNavigator } from '@react-navigation/stack';
 import React, { useEffect, useState } from 'react';
+import { CardStyleInterpolators, createStackNavigator } from '@react-navigation/stack';
 
 import { LoginScreen, OnBoardingScreen, RegisterScreen, ResetPasswordScreen, VerificationCodeScreen } from '../../screens';
 import { ForgetPasswordScreen } from '../../screens/forgetPasswordScreen';

@@ -15,7 +15,9 @@ export const BottomStackNavigation = () => {
   return (
     <Tab.Navigator
       tabBar={props => <CustomBottomTabBar {...props} />}
-      
+      screenOptions={{
+        tabBarHideOnKeyboard: true
+      }}
     >
       <Tab.Screen  
         name='homeStackNavigation'

@@ -20,6 +20,9 @@ import { Search } from './image/svgIcons/IcSearch';
 import { Google } from './image/svgIcons/IcGoogle';
 import { Facebook } from './image/svgIcons/IcFacebook';
 import { BackArrow } from './image/svgIcons/IcBackArrow';
+import { Bell } from './image/svgIcons/IcBell';
+import { Mic } from './image/svgIcons/IcMic';
+import { Filter } from './image/svgIcons/IcFilter';
 
 export const IcLogo = props => <Logo {...props} />;
 export const IcHeart = props => <Heart {...props} />;
@@ -39,3 +42,6 @@ export const IcAccount = props => <Account {...props} />;
 export const IcGoogle = props => <Google {...props} />;
 export const IcFacebook = props => <Facebook {...props} />;
 export const IcBackArrow = props => <BackArrow {...props} />;
+export const IcBell = props => <Bell {...props} />;
+export const IcMic = props => <Mic {...props} />;
+export const IcFilter = props => <Filter {...props} />;

@@ -20,7 +20,6 @@ export const Modal = ({
 
   const animateModal = useRef(new Animated.Value(screenHeight)).current;
 
-
   const handleFirstButtonPress = () => {
     Animated.timing(animateModal, {
       toValue: screenHeight,
@@ -32,8 +31,6 @@ export const Modal = ({
       }
     });
   };
-
-
 
   useEffect(() => {
     Animated.timing(animateModal, {

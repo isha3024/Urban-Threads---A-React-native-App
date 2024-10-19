@@ -1,26 +1,30 @@
-import {API_URL} from '../../config';
+import { BASE_URL } from '../../config';
 import moment from 'moment';
 
 // INFO: all global functions will be added here
 export const sum = (a, b) => {
   return a + b;
 };
+
 // ** allow only number value
 export const NumberValidation = val => {
   let alphaNumericRegex = /^([0-9])*$/;
   return alphaNumericRegex.test(val);
 };
 
+// **allow email validations
 export const EmailValidation = (email) => {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return emailRegex.test(email);
 }
 
+// ** allow string validations
 export const StringValidation = val => {
   let characterRegex = /^[a-zA-Z\s?.?]*$/;
   return characterRegex.test(val);
 };
 
+// ** allow password validation
 export const passwordValidation = val => {
   passwordPattern =
     /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*?&])([a-zA-Z0-9@$!%*?&]{8,})$/;
@@ -52,7 +56,7 @@ export const invertColor = color => {
 };
 
 export const imageView = img => {
-  const originalUrl = API_URL;
+  const originalUrl = BASE_URL;
 
   // Remove "/api" from the URL
   const modifiedUrl = originalUrl.replace('/api', '');
